@@ -1,4 +1,3 @@
-
 import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
@@ -98,7 +97,7 @@ async function searchInPinecone(embedding: number[], filters: any, topK: number,
     body.filter = filters;
   }
 
-  const response = await fetch('https://make-uae-mvp-8w3f0s3.svc.aped-4627-b74a.pinecone.io/query', {
+  const response = await fetch('https://make-uae-cursor-w5h5ft3.svc.aped-4627-b74a.pinecone.io/query', {
     method: 'POST',
     headers: {
       'Api-Key': pineconeKey,

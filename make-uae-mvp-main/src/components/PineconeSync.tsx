@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
@@ -12,7 +11,7 @@ const PineconeSync = () => {
     if (syncCompleted || isSyncing) return;
     
     setIsSyncing(true);
-    console.log('Starting sync to make-uae-mvp Pinecone index...');
+    console.log('Starting sync to make-uae-cursor Pinecone index...');
     
     try {
       const { data, error } = await supabase.functions.invoke('sync-to-pinecone', {
@@ -28,7 +27,7 @@ const PineconeSync = () => {
       if (data.success) {
         toast({
           title: "Sync Successful",
-          description: `${data.successCount} activities synced to make-uae-mvp index`,
+          description: `${data.successCount} activities synced to make-uae-cursor index`,
         });
         setSyncCompleted(true);
       } else {
